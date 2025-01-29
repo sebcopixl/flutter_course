@@ -1,18 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class StyledText extends StatelessWidget {
   const StyledText(this.text, {super.key});
+
   final String text;
+
+  static final textStyle = GoogleFonts.play(
+    color: Colors.white,
+    fontSize: 30,
+  );
 
   @override
   Widget build(context) {
     return Center(
       child: Text(
         text,
-        style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-          color: Colors.white,
-          fontSize: 30,
-        ),
+        style: textStyle,
       ),
     );
   }
