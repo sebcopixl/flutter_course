@@ -1,22 +1,23 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MaterialApp(
-      home: Scaffold(
-        appBar: PreferredSize(
-          preferredSize: Size.fromHeight(70.0), // Height of the AppBar
-          child: ClipRRect(
-            borderRadius: BorderRadius.vertical(
-              bottom: Radius.circular(20), // Adjust the radius as needed
-            ),
-            child: AppBar(
-              title: Text('Rounded AppBar'),
-              backgroundColor: const Color.fromARGB(146, 121, 50, 235),
-              elevation: 4, // Adjust shadow as needed
-            ),
-          ),
-        ),
-        body: Center(child: Text('Content here'))
+  runApp(MaterialApp(home: Scaffold(body: GradientContainer())));
+}
+
+class GradientContainer extends StatelessWidget {
+  @override
+  Widget build(context) {
+    return Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+            colors: [const Color.fromARGB(255, 17, 16, 34), const Color(0xFF302B63)],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter),
       ),
-  ));
+      child: const Center(
+        child: Text('Hello World!',
+            style: TextStyle(color: Colors.white, fontSize: 30)),
+      ),
+    );
+  }
 }
