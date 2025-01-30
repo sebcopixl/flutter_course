@@ -11,6 +11,15 @@ class StyledText extends StatelessWidget {
     super.key,
   });
 
+// Named constructor that allows customizing everything
+  const StyledText.matcha(
+    this.text, {
+    super.key,
+    this.fontSize = 30,
+    this.color = const Color.fromARGB(255, 16, 23, 32),
+    this.fontFamily = 'Play',
+  });
+
   final String text;
   final double fontSize;
   final Color color;
