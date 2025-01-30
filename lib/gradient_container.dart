@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/styled_text.dart';
 
 class GradientContainer extends StatelessWidget {
   const GradientContainer(
@@ -23,17 +22,40 @@ class GradientContainer extends StatelessWidget {
   final Alignment startAlignment;
   final Alignment endAlignment;
 
+  void rollDice() {
+    // Implement rolling dice logic here
+  }
+
   @override
   Widget build(context) {
     return Container(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-            colors: colors, begin: startAlignment, end: endAlignment),
-      ),
-      child: StyledText(
-        'GEN-X SOFT CLUB',
-        color: Color.fromARGB(255, 218, 223, 229), // Using primary constructor to customize color for text only
-      ),
-    );
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+              colors: colors, begin: startAlignment, end: endAlignment),
+        ),
+        child: Center(
+            child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              'assets/images/dice-1.png',
+              width: 100,
+            ),
+            const SizedBox(height: 20),
+            TextButton(
+                onPressed: rollDice,
+                style: TextButton.styleFrom(
+                    padding: const EdgeInsets.all(20.0),
+                    backgroundColor: Color.fromARGB(255, 230, 230, 250),
+                    foregroundColor: Color.fromARGB(255, 16, 23, 32),
+                    textStyle: TextStyle(
+                        fontSize: 30,
+                        color: Color.fromARGB(255, 230, 230, 250))),
+                child: const Text(
+                  'Roll Dice',
+                )),
+          ],
+        )) // Using an image asset
+        );
   }
 }
